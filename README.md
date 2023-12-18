@@ -11,7 +11,7 @@
     Prepare redis in local:
         docker-compose up -d
 
-    Run go in package: /api/cmd/serverd/main with local.env file
+    Run main.go in package: /api/cmd/serverd/main.go with local.env file
 
     curl: 
         curl --location 'http://127.0.0.1:3000/airport-service/v1/airports?code=VJ1'
