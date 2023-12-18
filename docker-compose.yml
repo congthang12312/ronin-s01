@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  # TODO: add .DockerFile in here
+  db-redis:
+    container_name: ronin-redis-local
+    image: redis:alpine
+    restart: always
+    command: redis-server /usr/local/etc/redis/redis.conf
+    ports:
+      - "6379:6379"
+    networks:
+      - network
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+
+# networks to be created to facilitate communication between containers
+networks:
+  network:
+    driver: bridge
